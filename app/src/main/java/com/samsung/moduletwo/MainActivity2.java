@@ -12,57 +12,51 @@ import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    public static int[] res = new int[4];
+    public static int[] res = new int[4]; //Массив значений каждого из флажков
 
-Button n1;
-TextView eror;
-CheckBox case1, case2, case3, case4;
+Button n1; //Кнопка перехода к следующей Activity
+CheckBox case1, case2, case3, case4; //Флажки
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        n1 = findViewById(R.id.n1);
-        n1.setOnClickListener(this);
-        eror = findViewById(R.id.eror);
-        case1 = findViewById(R.id.case1);
-        case1.setOnCheckedChangeListener(this);
-        case2 = findViewById(R.id.case2);
-        case2.setOnCheckedChangeListener(this);
-        case3 = findViewById(R.id.case3);
-        case3.setOnCheckedChangeListener(this);
-        case4 = findViewById(R.id.case4);
-        case4.setOnCheckedChangeListener(this);
+        n1 = findViewById(R.id.n1); //Находим кнопку
+        n1.setOnClickListener(this); //Подключаем к ней слушатель
+        case1 = findViewById(R.id.case1); //Находим первый флажок
+        case1.setOnCheckedChangeListener(this); //Подключаем слушатель
+        case2 = findViewById(R.id.case2); //Находим второй флажок
+        case2.setOnCheckedChangeListener(this); //Подключаем слушатель
+        case3 = findViewById(R.id.case3); //Находим третий флажок
+        case3.setOnCheckedChangeListener(this); //Подключаем слушатель
+        case4 = findViewById(R.id.case4); //Находим четвертый флажок
+        case4.setOnCheckedChangeListener(this); //Подключаем слушатель
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.n1:{
-                Intent intent = new Intent(this, MainActivity3.class);
-                startActivity(intent);
+            case R.id.n1:{ //Если нажата кнопка
+                Intent intent = new Intent(this, MainActivity3.class); //Создаем экзэмпляр класса Intent
+                startActivity(intent); //Переходим к следующей Activity
             }
         }
     }
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        boolean eins;
-        boolean zwei;
-        boolean drei;
-        boolean viere;
         switch (compoundButton.getId()) {
-            case R.id.case1:{
-                if (b == true) {
-                    res[0] = 1;
+            case R.id.case1:{ //Если у первого флажка изменилось положение
+                if (b) { //Если он включился
+                    res[0] = 1; //Делаем его переменную из выходного массива единицей
                 }
-                else {
-                    res[0] = 0;
+                else { //Иначе
+                    res[0] = 0; //Делаем его нулем
                 }
-                break;
-            }
+                break; //Лишний раз не проверяем остальные флаги
+            }//Во всех остальных кейсах такой же принцип
             case R.id.case2:{
-                if (b == true) {
+                if (b) {
                     res[1] = 1;
                 }
                 else {
@@ -71,7 +65,7 @@ CheckBox case1, case2, case3, case4;
                 break;
             }
             case R.id.case3:{
-                if (b == true) {
+                if (b) {
                     res[2] = 1;
                 }
                 else {
@@ -80,18 +74,13 @@ CheckBox case1, case2, case3, case4;
                 break;
             }
             case R.id.case4:{
-                if (b == true) {
+                if (b) {
                     res[3] = 1;
                 }
                 else {
                     res[3] = 0;
                 }
-                break;
             }
         }
-    }
-
-    public static  int[] returner() {
-        return res;
     }
 }
