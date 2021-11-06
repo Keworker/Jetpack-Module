@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+    <TextView
+        style="@style/Qestion"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберити верные утверждения: \n a) static неизменяемые переменные \n b) Поля - это переменные" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"/>
+        <RadioGroup
+            android:id="@+id/gr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <RadioButton
+            style="@style/Qestion"
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Верно a"/>
+        <RadioButton
+            style="@style/Qestion"
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Верно b"/>
+        <RadioButton
+            style="@style/Qestion"
+            android:id="@+id/ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="верно a и b"/>
+        <RadioButton
+            style="@style/Qestion"
+            android:id="@+id/none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Нет верных утверждений"/>
+        </RadioGroup>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/qwer"
+        style="@style/Erorr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите 1 вариант"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
+</LinearLayout>
