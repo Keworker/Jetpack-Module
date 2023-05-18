@@ -12,6 +12,16 @@
         android:theme="@style/Theme.JetpackModule"
         tools:targetApi="31">
         <activity
+            android:name=".CheckBoxActivity"
+            android:exported="false"
+            android:label="@string/title_activity_check_box"
+            android:theme="@style/Theme.JetpackModule" />
+        <activity
+            android:name=".RadioActivity"
+            android:exported="false"
+            android:label="@string/title_activity_radio"
+            android:theme="@style/Theme.JetpackModule" />
+        <activity
             android:name=".EditTextActivity"
             android:exported="false" />
         <activity

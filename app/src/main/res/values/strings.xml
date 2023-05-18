@@ -5,4 +5,13 @@
     <string name="edit_text_q">Type any text</string>
     <string name="answer">Answer</string>
     <string name="next_q">Next question</string>
+    <string name="title_activity_radio">RadioActivity</string>
+    <string name="radio_q">Choose any variant</string>
+    <string name="any_variant0">Any variant</string>
+    <string name="any_variant1">Any variant 1</string>
+    <string name="any_variant2">Any variant 2</string>
+    <string name="any_variant3">Any variant 3</string>
+    <string name="title_activity_check_box">CheckBoxActivity</string>
+    <string name="finish_test">Finish test!</string>
+    <string name="checkbox_q">Choose some variants</string>
 </resources>
