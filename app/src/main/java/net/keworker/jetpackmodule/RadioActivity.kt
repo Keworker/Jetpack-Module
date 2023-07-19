@@ -8,15 +8,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.NextPlan
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -29,6 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import net.keworker.jetpackmodule.ui.elements.FloatingActionButtonParams
+import net.keworker.jetpackmodule.ui.elements.FloatingButton
 import net.keworker.jetpackmodule.ui.theme.JetpackModuleTheme
 
 class RadioActivity : ComponentActivity() {
@@ -42,24 +39,12 @@ class RadioActivity : ComponentActivity() {
                 Scaffold(
                     floatingActionButtonPosition = FabPosition.End,
                     floatingActionButton = {
-                        FloatingActionButton(
-                            onClick = ::nextQuestion,
-                            shape = MaterialTheme.shapes.extraLarge
-                        ) {
-                            Row(Modifier.padding(6.dp)) {
-                                Text(
-                                    resources.getString(R.string.next_q),
-                                    fontWeight = FontWeight.Medium,
-                                    style = MaterialTheme.typography.bodyLarge
-                                )
-                                Icon(
-                                    Icons.Filled.NextPlan,
-                                    resources.getString(R.string.next_q),
-                                    modifier = Modifier.offset(x = 6.dp)
-                                )
-                            }
-                        }
-                    },
+                        FloatingButton(
+                            FloatingActionButtonParams(
+                                resources.getString(R.string.next_q), ::nextQuestion
+                            )
+                        )
+                    }
                 ) {
                     QuestionAndButtons(it)
                 }

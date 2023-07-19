@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JetpackModule</string>
+    <string name="app_name">Jetpack Module</string>
     <string name="test_label">Simple test app example</string>
     <string name="test_subheading">Explore Jetpack-Compose features -></string>
     <string name="edit_text_q">Type any text</string>

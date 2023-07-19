@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.NextPlan
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import net.keworker.jetpackmodule.ui.elements.FloatingActionButtonParams
+import net.keworker.jetpackmodule.ui.elements.FloatingButton
 import net.keworker.jetpackmodule.ui.theme.JetpackModuleTheme
 
 class EditTextActivity : AppCompatActivity() {
@@ -29,24 +29,12 @@ class EditTextActivity : AppCompatActivity() {
                 Scaffold(
                     floatingActionButtonPosition = FabPosition.End,
                     floatingActionButton = {
-                        FloatingActionButton(
-                            onClick = ::nextQuestion,
-                            shape = MaterialTheme.shapes.extraLarge
-                        ) {
-                            Row(Modifier.padding(6.dp)) {
-                                Text(
-                                    resources.getString(R.string.next_q),
-                                    fontWeight = FontWeight.Medium,
-                                    style = MaterialTheme.typography.bodyLarge
-                                )
-                                Icon(
-                                    Icons.Filled.NextPlan,
-                                    resources.getString(R.string.next_q),
-                                    modifier = Modifier.offset(x = 6.dp)
-                                )
-                            }
-                        }
-                    },
+                        FloatingButton(
+                            FloatingActionButtonParams(
+                                resources.getString(R.string.next_q), ::nextQuestion
+                            )
+                        )
+                    }
                 ) {
                     QuestionAndAnswer(it)
                 }

@@ -7,15 +7,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,6 +22,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import net.keworker.jetpackmodule.ui.elements.FloatingActionButtonParams
+import net.keworker.jetpackmodule.ui.elements.FloatingButton
 import net.keworker.jetpackmodule.ui.theme.JetpackModuleTheme
 
 class CheckBoxActivity : ComponentActivity() {
@@ -40,24 +37,12 @@ class CheckBoxActivity : ComponentActivity() {
                 Scaffold(
                     floatingActionButtonPosition = FabPosition.End,
                     floatingActionButton = {
-                        FloatingActionButton(
-                            onClick = ::nextQuestion,
-                            shape = MaterialTheme.shapes.extraLarge
-                        ) {
-                            Row(Modifier.padding(6.dp)) {
-                                Text(
-                                    resources.getString(R.string.finish_test),
-                                    fontWeight = FontWeight.Medium,
-                                    style = MaterialTheme.typography.bodyLarge
-                                )
-                                Icon(
-                                    Icons.Filled.Check,
-                                    resources.getString(R.string.finish_test),
-                                    modifier = Modifier.offset(x = 6.dp)
-                                )
-                            }
-                        }
-                    },
+                        FloatingButton(
+                            FloatingActionButtonParams(
+                                resources.getString(R.string.next_q), ::nextQuestion
+                            )
+                        )
+                    }
                 ) {
                     QuestionAndChecks(it)
                 }
